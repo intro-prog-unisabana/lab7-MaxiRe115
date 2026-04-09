@@ -16,8 +16,8 @@ def encrypt_single_pass(filename: str) -> None:
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
     with open(filename, 'r') as f:
-        csv.reader(filename)
-        for linea in filename:
+        leer= csv.reader(filename)
+        for linea in leer:
             print(linea)
 
 
