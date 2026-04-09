@@ -15,10 +15,19 @@ def encrypt_single_pass(filename: str) -> None:
 
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
-    with open(filename, mode='r') as f:
+    with open(filename, 'r') as f:
+        lista= []
+
         leer= csv.reader(f)
-        for linea in leer:
-            print(linea)
+        for row in leer:
+            if row:
+                lista.append(row)
+    for index, row in enumerate(lista):
+        if index != 0:
+            row[2] = caesar_encrypt(row[2])
+    with open(filename, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(lista)
 
 
 def change_password(filename: str, website: str, password: str) -> bool:
