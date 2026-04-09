@@ -6,17 +6,19 @@ from caesar import caesar_encrypt
 def encrypt_single_pass(filename: str) -> None:
     """TODO: Parte 1."""
     with open(filename, 'r') as archivo:
-        linea= archivo.read()
-        separar= linea.strip()
-    call = caesar_encrypt(separar)
+        password = archivo.read().strip()
+    call = caesar_encrypt(password)
     with open(filename, 'w') as documento:
         documento.write(call)
-    return documento
+
 
 
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
-    pass
+    with open(filename, 'r') as f:
+        csv.reader(filename)
+        for linea in filename:
+            print(linea)
 
 
 def change_password(filename: str, website: str, password: str) -> bool:
